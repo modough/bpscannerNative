@@ -1,0 +1,113 @@
+{
+  "theme": "Dark",
+  "archetype": "Archetype 2: The Performance Pro (Tactical Utility & Precision)",
+  "reasoning": "A gate agent's boarding pass scanner is a tactical, high-speed utility tool. It requires extreme clarity, high contrast for outdoor/bright gate lighting, and obvious visual feedback. We use an 'Aviation Amber' accent for scanner UI instead of generic SaaS blue.",
+  "colors": {
+    "background": "#090A0C",
+    "surface": "#121418",
+    "surface_elevated": "#1C1F26",
+    "primary": "#FF9F0A",
+    "primary_hover": "#FFB340",
+    "primary_muted": "rgba(255, 159, 10, 0.2)",
+    "secondary": "#2C313C",
+    "text_primary": "#F2F2F7",
+    "text_secondary": "#8E8E93",
+    "success": "#30D158",
+    "success_bg": "rgba(48, 209, 88, 0.15)",
+    "error": "#FF453A",
+    "error_bg": "rgba(255, 69, 58, 0.15)",
+    "border": "rgba(255, 255, 255, 0.1)"
+  },
+  "typography": {
+    "heading_font": "IBM Plex Sans, sans-serif",
+    "body_font": "IBM Plex Sans, sans-serif",
+    "mono_font": "IBM Plex Mono, monospace",
+    "scales": {
+      "h1": "text-3xl font-bold tracking-tight text-[#F2F2F7]",
+      "h2": "text-2xl font-bold tracking-tight text-[#F2F2F7]",
+      "h3": "text-xl font-semibold tracking-tight text-[#F2F2F7]",
+      "h4": "text-lg font-medium tracking-tight text-[#F2F2F7]",
+      "body": "text-base font-normal text-[#F2F2F7] leading-relaxed",
+      "body_sm": "text-sm font-normal text-[#8E8E93]",
+      "label": "text-xs font-bold uppercase tracking-[0.15em] text-[#8E8E93]",
+      "data_value": "font-mono text-xl font-semibold text-[#FF9F0A]"
+    }
+  },
+  "spacing_and_layout": {
+    "container": "w-full max-w-md mx-auto min-h-screen bg-[#090A0C] pb-24",
+    "screen_padding": "p-4 sm:p-6",
+    "gap_sm": "gap-2",
+    "gap_md": "gap-4",
+    "gap_lg": "gap-6",
+    "grid_bingo": "grid grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-2"
+  },
+  "components": {
+    "boarding_pass_card": {
+      "structure": "A specialized ticket component simulating physical boarding passes.",
+      "container": "relative bg-gradient-to-b from-[#FF9F0A]/10 via-[#1C1F26] to-[#121418] border border-[#FF9F0A]/30 rounded-2xl overflow-hidden shadow-lg p-0",
+      "header_section": "p-6 pb-8",
+      "divider": "relative border-t-2 border-dashed border-[#8E8E93]/40 mx-6",
+      "notches": "absolute -left-3 -right-3 top-[-10px] flex justify-between pointer-events-none; use two w-6 h-6 rounded-full bg-[#090A0C] border border-[#FF9F0A]/30 (masking the card edges)",
+      "footer_section": "p-6 pt-8 bg-[#121418]/50"
+    },
+    "scanner_viewfinder": {
+      "container": "relative w-full aspect-square max-w-[300px] mx-auto rounded-xl overflow-hidden bg-black/50 border border-white/10 shadow-[0_0_40px_rgba(255,159,10,0.1)]",
+      "corners": "absolute w-12 h-12 border-[#FF9F0A] border-4 rounded-xl",
+      "corner_tl": "top-0 left-0 border-r-0 border-b-0 rounded-tl-xl rounded-tr-none rounded-bl-none",
+      "corner_tr": "top-0 right-0 border-l-0 border-b-0 rounded-tr-xl rounded-tl-none rounded-br-none",
+      "corner_bl": "bottom-0 left-0 border-r-0 border-t-0 rounded-bl-xl rounded-tl-none rounded-br-none",
+      "corner_br": "bottom-0 right-0 border-l-0 border-t-0 rounded-br-xl rounded-tr-none rounded-bl-none",
+      "scan_line": "absolute w-full h-[2px] bg-[#FF9F0A] shadow-[0_0_15px_3px_rgba(255,159,10,0.6)] animate-[scan_2s_ease-in-out_infinite]"
+    },
+    "bingo_board_cell": {
+      "base": "aspect-square rounded-lg flex items-center justify-center text-sm font-mono transition-all duration-200 border",
+      "empty": "bg-[#121418] border-white/5 text-[#8E8E93]",
+      "filled": "bg-[#FF9F0A]/20 border-[#FF9F0A]/50 text-[#FF9F0A] shadow-[0_0_10px_rgba(255,159,10,0.2)] font-bold scale-105"
+    },
+    "bottom_tab_bar": {
+      "container": "fixed bottom-0 left-0 right-0 max-w-md mx-auto h-20 bg-[#121418]/90 backdrop-blur-xl border-t border-white/10 flex items-center justify-around px-2 pb-safe z-50",
+      "tab_item": "flex flex-col items-center justify-center w-16 h-12 gap-1",
+      "tab_active": "text-[#FF9F0A]",
+      "tab_inactive": "text-[#8E8E93] hover:text-[#F2F2F7]"
+    },
+    "toast_overlay": {
+      "success": "bg-[#30D158]/20 border border-[#30D158] text-[#30D158] backdrop-blur-md rounded-xl p-4 flex items-center gap-3 shadow-lg",
+      "error": "bg-[#FF453A]/20 border border-[#FF453A] text-[#FF453A] backdrop-blur-md rounded-xl p-4 flex items-center gap-3 shadow-lg"
+    }
+  },
+  "icons": {
+    "library": "lucide-react (Map to Expo Vector Icons if strictly building native, but use lucide-react for the web app implementation)",
+    "mapping": {
+      "Home/Config": "Settings2",
+      "Scan": "ScanLine",
+      "Manual": "Keyboard",
+      "List": "Users",
+      "Flight": "Plane",
+      "Seat": "Armchair",
+      "Sequence": "Hash",
+      "Ticket": "Ticket"
+    }
+  },
+  "motion": {
+    "scan_animation": "Keyframes: 0% { top: 5%; opacity: 0 } 10% { opacity: 1 } 50% { top: 95%; opacity: 1 } 90% { opacity: 1 } 100% { top: 5%; opacity: 0 }",
+    "page_transition": "Simple fade-in (opacity 0 to 1) duration-200 for tab switching.",
+    "list_stagger": "Framer motion staggerChildren 0.05s for passenger list rows."
+  },
+  "image_urls": [],
+  "accessibility": {
+    "contrast": "Text over backgrounds exceeds 4.5:1 ratio.",
+    "touch_targets": "All interactive elements in tab bar and lists are minimum 44x44px.",
+    "test_ids": "CRITICAL: Add `data-testid` to ALL interactive elements (e.g., `data-testid=\"tab-scan\"`, `data-testid=\"btn-manual-submit\"`, `data-testid=\"input-flight-number\"`)."
+  },
+  "instructions_to_main_agent": [
+    "Build the application using React Web/Tailwind/Shadcn mimicking a mobile app layout (max-w-md, bottom fixed tab bar).",
+    "Enforce dark mode globally. Add `bg-[#090A0C]` to the body/root element.",
+    "Implement the custom 'boarding_pass_card' using HTML/Tailwind exactly as described with pseudo-elements or absolute positioned circles to cut out the side notches.",
+    "Create the scanning viewfinder overlay with the corner borders and an animated scanning line.",
+    "For icons, use `lucide-react`. The problem statement mentioned `@expo/vector-icons`, but for this React Web environment implementation, Lucide is appropriate and maintains the aesthetic.",
+    "The Bingo board should use a dense CSS grid.",
+    "Use standard browser `localStorage` to mock the `AsyncStorage` requirement for flight configuration and passenger lists.",
+    "Ensure all input fields (flight number, routing) use Shadcn UI components styled to fit the dark tactical theme (border-white/20, focus:border-[#FF9F0A]).",
+    "MUST include `data-testid` attributes on all buttons, tabs, inputs, and list items."
+  ]
+}
